@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "parserOptions": {
+    "parser": "babel-eslint",
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:vue/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", {
+      "trailingComma": "all",
+    }]
+  }
+}
