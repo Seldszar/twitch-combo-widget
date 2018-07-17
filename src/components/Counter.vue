@@ -77,7 +77,7 @@ export default {
       this.ready = false;
 
       if (this.enterTimeline) {
-        this.enterTimeline.kill({ opacity: true }, el);
+        this.enterTimeline.kill({ opacity: true, scale: true }, el);
       }
     },
     leave(el, done) {
@@ -86,7 +86,7 @@ export default {
 
       this.$nextTick(() => {
         tl.set(el, { zIndex: 0 });
-        tl.to(el, 0.3, { scale: 1 });
+        tl.to(el, 0.3, { opacity: 1, scale: 1 });
         tl.to(el, 0.3, { opacity: 0.5, delay: 1 });
         tl.to(el, 0.6, { opacity: 0, delay });
         tl.to(el, 0.6, { height: 0 });
