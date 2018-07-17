@@ -8,12 +8,25 @@ const app = new Vue({
   render: h => h(App),
 });
 
-WebFont.load({
-  classes: false,
-  google: {
-    families: [`${settings.fontFamily}:700`],
-  },
-  active: () => {
-    app.$mount("#app");
-  },
-});
+if (settings.font.provider === "local") {
+  app.$mount("#app");
+} else {
+  const webFontConfig = {
+    classes: false,
+    active: () => {
+      app.$mount("#app");
+    },
+  };
+
+  switch (settings.font.provider) {
+    case "google": {
+      webFontConfig.google = {
+        families: [`${settings.font.family}:700`],
+      };
+
+      break;
+    }
+  }
+
+  WebFont.load(webFontConfig);
+}

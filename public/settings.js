@@ -18,10 +18,22 @@ const settings = {
   alignment: "center",
 
   /**
-   * The font family used by the widget. Must be from Google Fonts.
-   * @type {String}
+   * The font used by the widget.
+   * @type {Object}
    */
-  fontFamily: "Roboto",
+  font: {
+    /**
+     * The font provider ("local", "google").
+     * @type {String}
+     */
+    provider: "google",
+
+    /**
+     * The font family.
+     * @type {String}
+     */
+    family: "Roboto",
+  },
 
   /**
    * The users excluded from the combo counter (must be in lower case).

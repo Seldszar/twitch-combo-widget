@@ -1,7 +1,7 @@
 <template>
   <div
     id="app"
-    :style="{ alignItems, fontFamily: $settings.fontFamily }">
+    :style="{ alignItems, fontFamily: $settings.font.family }">
     <Counter
       v-if="bestCombo && bestCombo.amount >= $settings.threshold"
       v-bind="bestCombo"
