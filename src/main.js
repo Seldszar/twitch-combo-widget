@@ -11,7 +11,7 @@ const app = new Vue({
 WebFont.load({
   classes: false,
   google: {
-    families: ["Roboto:700"],
+    families: [`${settings.fontFamily}:700`],
   },
   active: () => {
     app.$mount("#app");

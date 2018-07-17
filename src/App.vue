@@ -1,10 +1,10 @@
 <template>
-  <div 
-    id="app" 
-    :style="{ alignItems }">
-    <Counter 
-      v-if="bestCombo && bestCombo.amount >= $settings.threshold" 
-      v-bind="bestCombo" 
+  <div
+    id="app"
+    :style="{ alignItems, fontFamily: $settings.fontFamily }">
+    <Counter
+      v-if="bestCombo && bestCombo.amount >= $settings.threshold"
+      v-bind="bestCombo"
       :key="bestCombo.id" />
   </div>
 </template>
