@@ -128,7 +128,6 @@ export default {
     align-items: center;
     display: flex;
     font-size: rem-calc(38);
-    font-weight: 700;
     line-height: 1;
     margin: rem-calc(4 0);
     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;

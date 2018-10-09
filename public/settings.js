@@ -33,6 +33,12 @@ const settings = {
      * @type {String}
      */
     family: "Roboto",
+
+    /**
+     * The font weight.
+     * @type {Number}
+     */
+    family: 700,
   },
 
   /**

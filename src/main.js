@@ -21,7 +21,7 @@ if (settings.font.provider === "local") {
   switch (settings.font.provider) {
     case "google": {
       webFontConfig.google = {
-        families: [`${settings.font.family}:700`],
+        families: [`${settings.font.family}:${settings.font.weight}`],
       };
 
       break;
