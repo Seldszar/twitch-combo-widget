@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { Elastic, TimelineLite, TweenLite } from "gsap";
+import { TimelineLite, TweenLite } from "gsap";
 import Emote from "./Emote.vue";
 
 export default {

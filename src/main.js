@@ -1,3 +1,5 @@
+/* global settings */
+
 import Vue from "vue";
 import WebFont from "webfontloader";
 import App from "./App.vue";
