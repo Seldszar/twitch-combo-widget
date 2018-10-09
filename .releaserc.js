@@ -1,4 +1,6 @@
-{
+const { name } = require("./package.json");
+
+module.exports = {
   "verifyConditions": [
     "@semantic-release/github"
   ],
@@ -11,7 +13,7 @@
   "publish": [
     {
       "path": "@semantic-release/github",
-      "assets": "dist/focal-*.zip"
-    }
-  ]
-}
+      "assets": `dist/${name}-*.zip`,
+    },
+  ],
+};
