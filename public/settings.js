@@ -1,4 +1,4 @@
-const settings = {
+window.settings = {
   /**
    * The channel name where the widget is associated.
    * @type {String}
@@ -38,7 +38,7 @@ const settings = {
      * The font weight.
      * @type {Number}
      */
-    family: 700,
+    weight: 700,
   },
 
   /**
