@@ -91,7 +91,7 @@ export default {
           .then(data => {
             emotes = emotes.concat(data.emotes);
           });
-      } catch {}
+      } catch (error) {} // eslint-disable-line no-empty
 
       try {
         await fetch(`https://api.betterttv.net/2/channels/${this.$settings.channel}`)
@@ -99,7 +99,7 @@ export default {
           .then(data => {
             emotes = emotes.concat(data.emotes);
           });
-      } catch {}
+      } catch (error) {} // eslint-disable-line no-empty
 
       return emotes;
     },
@@ -114,7 +114,7 @@ export default {
               emotes = emotes.concat(set.emoticons);
             }
           });
-      } catch {}
+      } catch (error) {} // eslint-disable-line no-empty
 
       try {
         await fetch(`https://api.frankerfacez.com/v1/room/${this.$settings.channel}`)
@@ -124,7 +124,7 @@ export default {
               emotes = emotes.concat(set.emoticons);
             }
           });
-      } catch {}
+      } catch (error) {} // eslint-disable-line no-empty
 
       return emotes;
     },
