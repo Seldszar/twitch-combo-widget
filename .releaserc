@@ -1,17 +1,18 @@
 {
-  "verifyConditions": [
-    "@semantic-release/github"
-  ],
-  "prepare": [
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "(cd dist; zip -r ${nextRelease.gitTag}.zip .)"
-    }
-  ],
-  "publish": [
-    {
-      "path": "@semantic-release/github",
-      "assets": "dist/*.zip"
-    }
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "(cd dist; zip -r ${nextRelease.gitTag}.zip .)"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": "dist/*.zip"
+      }
+    ]
   ]
 }
