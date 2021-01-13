@@ -85,36 +85,46 @@ export default {
     async fetchBttvEmotes() {
       let emotes = [];
 
-      await fetch(`https://api.betterttv.net/2/emotes`).then(async res => {
-        emotes = emotes.concat((await res.json()).emotes);
-      });
+      try {
+        await fetch(`https://api.betterttv.net/2/emotes`)
+          .then(res => res.json())
+          .then(data => {
+            emotes = emotes.concat(data.emotes);
+          });
+      } catch {}
 
-      await fetch(`https://api.betterttv.net/2/channels/${this.$settings.channel}`).then(
-        async res => {
-          emotes = emotes.concat((await res.json()).emotes);
-        },
-      );
+      try {
+        await fetch(`https://api.betterttv.net/2/channels/${this.$settings.channel}`)
+          .then(res => res.json())
+          .then(data => {
+            emotes = emotes.concat(data.emotes);
+          });
+      } catch {}
 
       return emotes;
     },
     async fetchFfzEmotes() {
       let emotes = [];
 
-      await fetch(`https://api.frankerfacez.com/v1/set/global`)
-        .then(res => res.json())
-        .then(data => {
-          for (const set of Object.values(data.sets)) {
-            emotes = emotes.concat(set.emoticons);
-          }
-        });
+      try {
+        await fetch(`https://api.frankerfacez.com/v1/set/global`)
+          .then(res => res.json())
+          .then(data => {
+            for (const set of Object.values(data.sets)) {
+              emotes = emotes.concat(set.emoticons);
+            }
+          });
+      } catch {}
 
-      await fetch(`https://api.frankerfacez.com/v1/room/${this.$settings.channel}`)
-        .then(res => res.json())
-        .then(data => {
-          for (const set of Object.values(data.sets)) {
-            emotes = emotes.concat(set.emoticons);
-          }
-        });
+      try {
+        await fetch(`https://api.frankerfacez.com/v1/room/${this.$settings.channel}`)
+          .then(res => res.json())
+          .then(data => {
+            for (const set of Object.values(data.sets)) {
+              emotes = emotes.concat(set.emoticons);
+            }
+          });
+      } catch {}
 
       return emotes;
     },
