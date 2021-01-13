@@ -11,7 +11,7 @@ A visual widget showing emote combos of a Twitch channel.
 
 ## Installation
 
-Clone this repository and install the dependencies by calling `npm install`, then build the widget by calling `npm build`.
+Download the [latest release](https://github.com/Seldszar/brickie/releases/latest) or clone this repository and install the dependencies by calling `npm install`, then build the widget by calling `npm build`.
 
 ## Usage
 
